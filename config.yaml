@@ -1,39 +1,39 @@
-# Server host/interface to bind to. Default is empty ("") to bind all interfaces (IPv4 + IPv6).
-# Use "127.0.0.1" or "localhost" to restrict access to local machine only.
-host: ''
+# 服务器主机/接口绑定。默认为空（""），绑定所有接口（IPv4 + IPv6）。
+# 使用 "127.0.0.1" 或 "localhost" 以仅限制本地机器的访问。
+主机: '': ''
 
-# Server port
-port: 8317
+# 服务器端口
+端口：8317: 8317
 
-# TLS settings for HTTPS. When enabled, the server listens with the provided certificate and key.
-tls:
-  enable: false
-  cert: ''
-  key: ''
+# TLS 配置用于 HTTPS。启用后，服务器使用提供的证书和密钥进行监听。
+输入：tls::
+  启用： false: false
+  证书：'': ''
+  键: '': ''
 
-# Management API settings
-remote-management:
-  # Whether to allow remote (non-localhost) management access.
-  # When false, only localhost can access management endpoints (a key is still required).
-  allow-remote: false
+# 管理 API 设置
+远程管理::
+  # 是否允许远程（非localhost）管理访问。# Whether to allow remote (non-localhost) management access.
+  # 当为假时，只有本地主机可以访问管理端点（仍然需要一个密钥）。# When false, only localhost can access management endpoints (a key is still required).
+  允许远程: 否: false
 
-  # Management key. If a plaintext value is provided here, it will be hashed on startup.
-  # All management requests (even from localhost) require this key.
-  # Leave empty to disable the Management API entirely (404 for all /v0/management routes).
-  secret-key: ''
+  # 管理密钥。如果在此处提供明文值，它将在启动时被哈希化。# Management key. If a plaintext value is provided here, it will be hashed on startup.
+  # 所有管理请求（包括来自本地主机的请求）都需要此密钥。# All management requests (even from localhost) require this key.
+  # 禁用管理 API（所有 /v0/management 路由返回 404）。# Leave empty to disable the Management API entirely (404 for all /v0/management routes).
+  秘密密钥: '': ''
 
-  # Disable the bundled management control panel asset download and HTTP route when true.
-  disable-control-panel: false
+  # 当为真时，禁用捆绑的管理控制面板资产下载和HTTP路由。# Disable the bundled management control panel asset download and HTTP route when true.
+  禁用控制面板: 否: false
 
-  # GitHub repository for the management control panel. Accepts a repository URL or releases API URL.
-  panel-github-repository: 'https://github.com/router-for-me/Cli-Proxy-API-Management-Center'
+  # GitHub 管理控制面板的仓库。接受仓库 URL 或 releases API URL。# GitHub repository for the management control panel. Accepts a repository URL or releases API URL.
+  面板-GitHub-仓库: 'https://github.com/router-for-me/Cli-Proxy-API-Management-Center': 'https://github.com/router-for-me/Cli-Proxy-API-Management-Center'
 
-# Authentication directory (supports ~ for home directory)
-auth-dir: '~/.cli-proxy-api'
+# 认证目录（支持~表示主目录）
+认证目录: '~/.cli-proxy-api': '~/.cli-proxy-api'
 
-# API keys for authentication
-api-keys:
-  - 'your-api-key-1'
+# API 密钥用于身份验证
+API 密钥::
+  - 'your-api-key-1''your-api-key-1'
   - 'your-api-key-2'
   - 'your-api-key-3'
 
